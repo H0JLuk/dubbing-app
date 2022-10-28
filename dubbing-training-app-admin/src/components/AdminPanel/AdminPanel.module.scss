@@ -1,0 +1,51 @@
+@import '../../scss/variables.scss';
+
+body {
+    background: linear-gradient(121.69deg, #141616 -13.43%, #2A363B 92.46%);
+}
+
+.admin {
+    height: 100vh;
+    width: 100vw;
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    border-bottom: 1px solid rgba($basic-white, .2);
+    padding-bottom: 10px;
+}
+
+.container {
+    padding-top: 30px;
+    flex-grow: 1;
+}
+
+.content {
+    display: flex;
+}
+
+.item {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 26px;
+    color: $gallery;
+    margin-right: 40px;
+    cursor: pointer;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+
+    &.active {
+        color: $project-color;
+    }
+}

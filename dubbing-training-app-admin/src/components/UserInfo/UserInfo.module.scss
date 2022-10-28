@@ -1,0 +1,209 @@
+@import '../../scss/variables.scss';
+
+.wrapper {
+    margin: auto;
+    margin-top: 45px;
+    width: 100%;
+    max-width: 576px;
+    padding-top: 52px;
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-bottom: 54px;
+    background-color: rgba(72, 72, 72, 0.29);
+    box-shadow: 3px 4px 4px rgba($basic-black, 0.25);
+    border-radius: 1px;
+}
+
+.input {
+    padding: 14px;
+    height: 100%;
+    background-color: rgba(72, 72, 72, 0.29);
+    font-size: 18px;
+    font-family: $default-font;
+    border: 1px solid $basic-white;
+    border-radius: 1px;
+    outline: none;
+    width: 100%;
+    display: block;
+    color: $basic-white;
+
+    &:disabled {
+        background-color: $corduroy;
+    }
+}
+
+.field {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.label {
+    position: absolute;
+    left: 10px;
+    top: -21px;
+    font-size: 12px;
+    color: $alto;
+    font-weight: 300;
+}
+
+.checkWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin {
+    font-size: 16px;
+    color: $alto;
+    font-weight: 300;
+    margin-right: 10px;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        left: 0px;
+        top: 1px;
+        border: 1px solid $basic-white;
+    }
+}
+
+.checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0px;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+
+    &:checked + .admin::after {
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        left: 4px;
+        top: 5px;
+        background-color: $basic-white;
+    }
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note {
+    resize: none;
+}
+
+.save {
+    border: none;
+    background-color: $chalet-green;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 25px;
+    font-size: 18px;
+    color: $basic-white;
+    border-radius: 3px;
+    margin-right: 15px;
+    font-family: $default-font;
+
+    &:hover,
+    &:focus {
+        opacity: .7;
+    }
+}
+
+.delete {
+    border: none;
+    background-color: rgba($tall-poppy, .6);
+    outline: none;
+    cursor: pointer;
+    padding: 10px 25px;
+    font-size: 18px;
+    color: $basic-white;
+    border-radius: 3px;
+    font-family: $default-font;
+
+    &:hover,
+    &:focus {
+        opacity: .7;
+    }
+}
+
+.eye {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: 31px;
+    height: 20px;
+    padding: 0;
+    background-image: url('../../img/icons/eye.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 20px;
+    margin-right: 15px;
+    margin-top: 2px;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: .6;
+        cursor: not-allowed;
+    }
+
+    &.active {
+        background-image: url('../../img/icons/eye-active.svg');
+    }
+
+    &:hover,
+    &:focus {
+        opacity: .8;
+    }
+}
+
+.edit {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    background-image: url('../../img/icons/edit.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: .6;
+        cursor: not-allowed;
+    }
+
+    &.active {
+        background-image: url('../../img/icons/edit-active.svg');
+    }
+
+    &:hover,
+    &:focus {
+        opacity: .8;
+    }
+}
+
+.passwordWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+
+    & > div {
+        margin-bottom: 0;
+        flex-grow: 1;
+    }
+}

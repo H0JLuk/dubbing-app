@@ -1,0 +1,11 @@
+---
+ingress:
+ hostDta: "admin-dev.dubtrainer.com"
+
+pod:
+  admin:
+    image: $CI_REGISTRY_IMAGE
+    tag: $CI_COMMIT_SHA
+
+credsecret:
+  dcnfjson: eWdfbcv= #set this value in commandline from REGCRED=$(cat docker_config.json | base64 | tr -d '\n')

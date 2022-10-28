@@ -1,0 +1,201 @@
+@import '../../scss/variables.scss';
+
+.takes {
+    margin-left: 30px;
+    min-width: 305px;
+    position: relative;
+    flex-grow: 1;
+}
+
+.button {
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: $nobel;
+    padding-left: 40px;
+    position: relative;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    display: block;
+    margin-bottom: 10px;
+    outline: none;
+
+    &::before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 0;
+        top: 3px;
+        background-color: $tundora;
+        border-radius: 5px;
+        background-image: url('../../img/icons/add.svg');
+        background-position: center center;
+        background-size: 60% 60%;
+        background-repeat: no-repeat;
+    }
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 2px solid #5E5E5E;
+    filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.45));
+    border-radius: 1px;
+    padding: 5px;
+    overflow-y: scroll;
+    max-height: 82vh;
+    position: relative;
+}
+
+.item {
+    padding: 5px;
+    background: rgba(72, 72, 72, 0.29);
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 1px;
+    margin-bottom: 21px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 500;
+    color: $silver-chalice;
+    margin-right: 4px;
+    position: absolute;
+    left: 5px;
+    top: -19px;
+}
+
+.form {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    color: $basic-white;
+    border: 1px solid $boulder;
+    border-radius: 1px;
+    padding: 7px 14px;
+    font-family: $default-font;
+    font-size: 13px;
+    box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.container {
+    display: flex;
+    position: relative;
+}
+
+.remove {
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba($basic-white, .5);
+    outline: none;
+    border-radius: 1px;
+    background-image: url('../../img/icons/remove.svg');
+    background-position: center 3px;
+    background-size: 60% 60%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.view {
+    margin-right: 5px;
+    border-radius: 4px;
+    border: 2px solid rgba($basic-white, .7);
+    background-color: rgba($corduroy, .5);
+    color: $basic-white;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: $default-font;
+    padding: 5px 13px;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: .5;
+        cursor: not-allowed;
+    }
+}
+
+.videoContainer {
+    margin-right: auto;
+}
+
+.video {
+    display: none;
+}
+
+.videoLabel {
+    display: block;
+    border-radius: 4px;
+    border: 2px solid $highland;
+    background-color: rgba($highland, .2);
+    color: $basic-white;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: $default-font;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($basic-black, .5);
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.takesControls {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.takesWrapper {
+    position: relative;
+}
+
+.wrap {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 35px;
+    width: 100%;
+
+    & > div {
+        margin-right: 5px;
+        flex-grow: 1;
+        width: calc(50% - 2px);
+    }
+
+    & > div:last-child {
+        margin-right: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.inputPreText {
+    resize: none;
+}

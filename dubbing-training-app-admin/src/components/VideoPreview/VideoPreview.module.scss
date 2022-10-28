@@ -1,0 +1,77 @@
+@import '../../scss/variables.scss';
+
+.wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    z-index: 101;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba($basic-black, .5);
+}
+
+.container {
+    position: relative;
+    padding: 20px 40px;
+    background-color: $boulder;
+    position: relative;
+    z-index: 102;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 9px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $basic-white;
+        transform: rotate(45deg);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 9px;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $basic-white;
+        transform: rotate(-45deg);
+    }
+}
+
+.video {
+    padding: 2px;
+    border-radius: 1px;
+    background-color: $basic-black;
+    outline: none;
+}
+
+.player {
+    width: 66vw;
+    height: 60vh;
+}

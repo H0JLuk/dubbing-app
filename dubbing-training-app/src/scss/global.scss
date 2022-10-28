@@ -1,0 +1,15 @@
+@import './variables.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    font-family: $default-font;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

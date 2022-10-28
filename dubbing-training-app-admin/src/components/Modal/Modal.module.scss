@@ -1,0 +1,59 @@
+@import '../../scss/variables.scss';
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba($basic-black, .6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    background-color: $silver;
+    border-radius: 5px;
+    border: 2px solid $basic-black;
+    padding: 40px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loader {
+    margin-bottom: 15px;
+}
+
+.title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+    max-width: 400px;
+}
+
+.text {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: $woodsmoke;
+    max-width: 600px;
+}
+
+.button {
+    background-color: transparent;
+    padding: 10px 25px;
+    border-radius: 5px;
+    margin-top: 40px;
+    border: 2px solid rgba($basic-black, .5);
+    outline: none;
+    font-family: $default-font;
+    font-size: 18px;
+    max-width: 200px;
+    cursor: pointer;
+}

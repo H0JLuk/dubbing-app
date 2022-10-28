@@ -1,0 +1,113 @@
+@import '../../scss/variables.scss';
+
+.start {
+    padding: 12px 85px;
+    filter: drop-shadow(0px 4px 4px rgba($basic-black, 0.7));
+    border-radius: 1px;
+    border: 4px solid $highland;
+    background-color: transparent;
+    color: $basic-white;
+    font-size: 16px;
+    font-family: $default-font;
+    text-transform: lowercase;
+    font-weight: 500;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 15px;
+        right: 66px;
+        width: 7px;
+        height: 14px;
+        background-image: url('../../img/icons/arrow.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+}
+
+.clipboard {
+    border: 4px solid $corduroy;
+    filter: drop-shadow(0px 4px 4px rgba($basic-black, 0.7));
+    border-radius: 1px;
+    padding: 12px 18px;
+    padding-right: 60px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: $alabaster;
+    flex-grow: 1;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 20px;
+        top: 13px;
+        width: 13px;
+        height: 17px;
+        background-image: url('../../img/icons/copy.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+.link {
+    color: $basic-white;
+    font-size: 16px;
+    text-transform: lowercase;
+    margin-right: 8px;
+}
+
+.hash {
+    color: $nobel;
+}
+
+.stop {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: 4px solid $outer-space;
+    filter: drop-shadow(0px 4px 4px rgba($basic-black, 0.7));
+    background-color: $woodsmoke;
+    padding: 12px 18px;
+    padding-left: 40px;
+    color: $basic-white;
+    font-size: 16px;
+    font-family: $default-font;
+    font-weight: 300;
+    margin-right: 10px;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 9px;
+        top: 12px;
+        width: 20px;
+        height: 20px;
+        background-image: url('../../img/icons/arrow.svg');
+        transform: rotate(180deg);
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+}

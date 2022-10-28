@@ -1,0 +1,88 @@
+@import '../../scss/variables.scss';
+
+.wrapper {
+    width: 339px;
+    min-width: 339px;
+    padding: 13px 28px;
+    height: 100%;
+    margin-left: calc(50% - 50vw);
+    background-color: rgba($basic-black, .33);
+}
+
+.project {
+    margin: 0;
+    color: $project-color;
+    margin-top: 33px;
+    margin-bottom: 16px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.add {
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: $nobel;
+    padding-left: 40px;
+    position: relative;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    outline: none;
+
+    &::before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 0;
+        top: 3px;
+        background-color: $tundora;
+        border-radius: 5px;
+        background-image: url('../../img/icons/add.svg');
+        background-position: center center;
+        background-size: 60% 60%;
+        background-repeat: no-repeat;
+    }
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-y: scroll;
+    max-height: 78vh;
+    overflow-x: hidden;
+}
+
+.user {
+    margin-bottom: 5px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.button {
+    padding: 13px 18px;
+    color: $basic-white;
+    font-size: 18px;
+    font-family: $default-font;
+    border: none;
+    outline: none;
+    border-radius: 1px;
+    background-color: $tundora;
+    display: block;
+    width: 100%;
+    text-align: start;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $boulder;
+    }
+}

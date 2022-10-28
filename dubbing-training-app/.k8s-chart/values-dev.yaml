@@ -1,0 +1,8 @@
+---
+ingress:
+ hostDta: "dev.dubtrainer.com"
+
+pod:
+  front:
+    image: $CI_REGISTRY_IMAGE
+    tag: $CI_COMMIT_SHA

@@ -1,0 +1,132 @@
+@import '../../scss/variables.scss';
+
+.sceneInfo {
+    margin-left: 30px;
+}
+
+.buttons {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.button {
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: $nobel;
+    padding-left: 40px;
+    position: relative;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    outline: none;
+
+    &::before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 0;
+        top: 3px;
+        background-color: $tundora;
+        border-radius: 5px;
+        background-image: url('../../img/icons/remove.svg');
+        background-position: center center;
+        background-size: 60% 60%;
+        background-repeat: no-repeat;
+    }
+}
+
+.wrapper {
+    max-width: 576px;
+    width: 100%;
+    padding-top: 52px;
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-bottom: 54px;
+    background-color: rgba(72, 72, 72, 0.29);
+    box-shadow: 3px 4px 4px rgba($basic-black, 0.25);
+    border-radius: 1px;
+}
+
+.input {
+    padding: 14px;
+    height: 100%;
+    background-color: rgba(72, 72, 72, 0.29);
+    font-size: 18px;
+    font-family: $default-font;
+    border: 1px solid $basic-white;
+    border-radius: 1px;
+    outline: none;
+    width: 100%;
+    display: block;
+    color: $basic-white;
+
+    &.title {
+        padding-right: 105px;
+    }
+
+    &.role {
+        padding-right: 102px;
+    }
+
+    &.gender {
+        padding-right: 79px;
+    }
+
+    &.age {
+        padding-right: 52px;
+    }
+
+    &.groups {
+        padding-right: 156px;
+    }
+
+    &.time {
+        padding-right: 60px;
+    }
+
+    &.takes {
+        padding-right: 65px;
+    }
+
+    &:disabled {
+        background-color: $corduroy;
+    }
+}
+
+.field {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 40px;
+
+    & div {
+        margin-bottom: 0;
+    }
+
+    & > div {
+        margin-right: 20px;
+        flex-grow: 1;
+        width: 45%;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+}
+
+.label {
+    position: absolute;
+    left: 10px;
+    top: -21px;
+    font-size: 12px;
+    color: $alto;
+    font-weight: 300;
+}

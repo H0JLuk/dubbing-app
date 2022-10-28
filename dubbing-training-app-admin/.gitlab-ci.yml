@@ -1,0 +1,80 @@
+---
+stages:
+  - build
+  - dockerize
+  - deploy
+
+dockerize_dev:
+  stage: dockerize
+  #when: manual
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  before_script:
+    - cp "$ENV_DEV" $(pwd)/.env
+    - mkdir -p /kaniko/.docker
+    - cp "$DOCKER_CONF" /kaniko/.docker/config.json
+  script:
+    - /kaniko/executor --cache=true --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+  only:
+    refs:
+      - dev
+  tags:
+    - docker
+
+
+deploy_dev:
+  stage: deploy
+  when: manual
+  image: $CI_REGISTRY/devops/kubectl:1.19.0
+  dependencies: []
+  before_script:
+    - cp "$KUBE_CONF" "$HOME/.kube/config"
+    - cp "$DOCKER_CONF" docker_config.json
+    - REGCRED=$(cat docker_config.json | base64 | tr -d '\n')
+  script:
+    - helm upgrade -i --namespace="dubbing-training-app" --atomic $CI_PROJECT_NAME --set pod.admin.image=$CI_REGISTRY_IMAGE,pod.admin.tag=$CI_COMMIT_SHORT_SHA --set credsecret.dcnfjson=$REGCRED ./.k8s-chart --values ./.k8s-chart/values-dev.yaml
+  only:
+    refs:
+      - dev
+  tags:
+    - docker
+
+build_prod:
+  stage: build
+  #when: manual
+  image:
+    name: node:15.14-slim
+  before_script:
+    - cp "$ENV_PROD" $(pwd)/.env
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - ./build
+    expire_in: 2 weeks
+  only:
+    refs:
+      - master
+
+deploy_prod:
+  stage: deploy
+  when: manual
+  image: 
+    name: instrumentisto/rsync-ssh:alpine3.12 # образ с ssh и rsync
+  dependencies:
+    - build_prod
+  before_script:
+    - eval $(ssh-agent -s)
+    - echo "$PROD_SERVER_SSH_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  script:
+    - ls -la
+    - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_SERVER "mkdir -p $DEPLOY_DIR"
+    - rsync -e "ssh -o StrictHostKeyChecking=no" -az --human-readable --delete ./build $SSH_USER@$SSH_SERVER:$DEPLOY_DIR
+    - ssh $SSH_USER@$SSH_SERVER "sudo rm -rf $DESTIN_DIR && sudo mv $DEPLOY_DIR $DESTIN_DIR"
+  only:
+    refs:
+      - master

@@ -1,0 +1,67 @@
+@import '../../scss/variables.scss';
+
+body {
+    background: linear-gradient(121.69deg, $woodsmoke -13.43%, $outer-space 92.46%);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    min-height: 100vh;
+}
+
+.head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 40px;
+}
+
+.project {
+    color: $project-color;
+    margin: 0;
+}
+
+.header {
+    margin: 0;
+    font-family: $default-font;
+    font-size: 30px;
+    color: $dove-gray;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.scene {
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    width: 70vw;
+    padding: 19px;
+    font-size: 50px;
+    font-weight: 400;
+    font-family: $default-font;
+    color: $alabaster;
+
+    &:hover {
+        background-color: $boulder;
+    }
+}
+
+.clipboard {
+    margin-bottom: 50px;
+
+    & > div {
+        max-width: 100%
+    }
+}

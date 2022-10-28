@@ -1,0 +1,98 @@
+@import '../../scss/variables.scss';
+
+.video-player__control {
+    width: 100%;
+    min-width: 100px;
+    margin-bottom: 5px;
+
+    &:first-child .video-player__button {
+        border-radius: 1px 10px 1px 1px;
+    }
+
+    &:last-child .video-player__button {
+        border-radius: 1px 1px 10px 1px;
+        margin: 0;
+    }
+}
+
+.video-player__loader {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    background-color: $basic-black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-player__button {
+    display: block;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: $default-font;
+    font-size: 12px;
+    font-weight: 500;
+    color: $basic-white;
+    padding: 0;
+    margin: 0;
+    padding-top: 59px;
+    padding-bottom: 30px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    border: 4px solid $corduroy;
+    border-radius: 1px;
+    filter: drop-shadow(0px 5px 3px rgba($basic-black, 0.75));
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        left: 35px;
+        top: 29px;
+    }
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &--video::before {
+        background-image: url('../../img/icons/play-green.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &--voice::before {
+        background-image: url('../../img/icons/play-red.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &--record::before {
+        border-radius: 50%;
+        background-color: $mandy;
+    }
+
+    &--stop::before {
+        background-color: $crimson;
+        border-radius: 2px;
+    }
+
+    &--video:disabled, &--stop:disabled,
+    &--record:disabled, &--voice:disabled {
+        opacity: .3;
+        cursor: default;
+    }
+
+    // &--record:disabled::before {
+    //     animation: recording 1.5s infinite;
+    // }
+}

@@ -1,0 +1,22 @@
+@import '../../scss/variables.scss';
+
+.LoginNotification {
+    padding: 13px 29px;
+    background-color: $boulder;
+    min-width: 300px;
+    max-width: 420px;
+}
+
+.LoginTitle {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 300;
+    color: $basic-white;
+    margin-bottom: 10px;
+}
+
+.LoginText {
+    margin: 0;
+    font-size: 13px;
+    color: $mercury;
+}

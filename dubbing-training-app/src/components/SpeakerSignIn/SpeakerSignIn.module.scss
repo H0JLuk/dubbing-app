@@ -1,0 +1,131 @@
+@import '../../scss/variables.scss';
+
+.sign {
+    cursor: pointer;
+    outline: none;
+    border: 4px solid rgba($highland, .5);
+    filter: drop-shadow(0px 4px 4px rgba($basic-black, 0.7));
+    background-color: transparent;
+    padding: 12px 18px;
+    color: $basic-white;
+    font-size: 16px;
+    font-family: $default-font;
+    font-weight: 300;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba($basic-black, 0.5);
+}
+
+.modal {
+    background-color: $outer-space-special;
+    padding: 40px 60px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 110;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.label {
+    display: block;
+    color: $alto;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.input {
+    padding: 14px;
+    background-color: transparent;
+    font-size: 18px;
+    font-family: $default-font;
+    border: 1px solid rgba($basic-white, .4);
+    border-radius: 1px;
+    outline: none;
+    width: 100%;
+    display: block;
+    color: $basic-white;
+}
+
+.submit {
+    margin-top: 40px;
+    padding: 14px;
+    background-color: $jewel;
+    font-size: 16px;
+    font-family: $default-font;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    width: 220px;
+    display: block;
+    color: $basic-white;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .7;
+    }
+}
+
+.pin {
+    padding: 14px;
+    background-color: transparent;
+    font-size: 18px;
+    font-family: $default-font;
+    border: 1px solid rgba($basic-white, .4);
+    border-radius: 1px;
+    outline: none;
+    width: 100%;
+    display: block;
+    color: $basic-white;
+    text-align: center;
+}
+
+.resent {
+    background-color: transparent;
+    border: 2px solid $tundora;
+    font-size: 14px;
+    padding: 14px;
+    font-family: $default-font;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    width: 220px;
+    color: $basic-white;
+    text-align: center;
+    margin-top: 40px;
+
+    &:hover {
+        opacity: .7;
+    }
+
+    & ~ .submit {
+        margin-top: 15px;
+    }
+}
+
+.message {
+    color: $tall-poppy;
+}

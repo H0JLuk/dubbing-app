@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: dta-front
+spec:  
+  selector:
+    matchLabels:
+      app: dta-front
+  template:
+    metadata:
+      name: dta-front
+      labels:
+        app: dta-front
+    spec:
+      serviceAccountName: build-robot
+      containers:
+        - name : dta-front
+          image: "{{ .Values.pod.front.image }}:{{ .Values.pod.front.tag }}"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

@@ -1,0 +1,309 @@
+@import '../../scss/variables.scss';
+
+.video-player__container {
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(121.69deg, $woodsmoke -13.43%, $outer-space 92.46%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 1040px;
+}
+
+.video-player__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 110px;
+    padding-left: 172px;
+    margin-bottom: 40px;
+}
+
+.video-player__player {
+    display: flex;
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.video-player__wrapper {
+    width: 80vw;
+    min-width: 832px;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $basic-black;
+    border: 1px solid $boulder;
+    border-radius: 5px;
+    position: relative;
+}
+
+.video-player__controls {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    padding-left: 3px;
+}
+
+.video-player__left-controls {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    padding-right: 3px;
+    min-width: 100px;
+}
+
+.video-player__countdown {
+    width: 100%;
+    height: 100%;
+    background-color: rgba($basic-black, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-player__count {
+    font-size: 170px;
+    color: $basic-white;
+}
+
+.video-player__session {
+    position: absolute;
+    top: 0;
+    left: 108px;
+    right: 108px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.video-player__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: $basic-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.video-player__overlay-header {
+    font-size: 46px;
+    color: $silver;
+    margin: 0;
+    text-transform: lowercase;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.video-player__sub-controls {
+    padding: 0;
+    padding-right: 103px;
+    margin: 0;
+}
+
+.video-player__scene-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    left: 108px;
+    right: 108px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.video-player__next-take {
+    min-width: 150px;
+    padding: 16px 18px;
+    padding-right: 78px;
+    outline: none;
+    background-color: transparent;
+    border: 4px solid $corduroy;
+    filter: drop-shadow(0px 4px 4px rgba($basic-black, 0.25));
+    border-radius: 1px 1px 10px 1px;
+    font-size: 14px;
+    color: $basic-white;
+    font-family: $default-font;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &:disabled {
+        opacity: .6;
+        cursor: default;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: 17px;
+        top: 14px;
+        width: 20px;
+        height: 20px;
+        background-image: url('../../img/icons/arrow.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+.video-player__scene-item {
+    min-width: 150px;
+}
+
+.video-player__take-subtitle {
+    padding: 16px 18px;
+    outline: none;
+    background-color: transparent;
+    border: 4px solid $corduroy;
+    filter: drop-shadow(0px 4px 4px rgba($basic-black, 0.25));
+    border-radius: 1px 1px 1px 1px;
+    font-size: 14px;
+    color: $basic-white;
+    font-family: $default-font;
+    font-weight: 500;
+    position: relative;
+    margin-right: 5px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &.active {
+        border: 4px solid rgba($project-color, .7);
+    }
+}
+
+.video-player__previous-take {
+    padding: 16px 18px;
+    padding-left: 78px;
+    outline: none;
+    background-color: transparent;
+    border: 4px solid $corduroy;
+    filter: drop-shadow(0px 4px 4px rgba($basic-black, 0.25));
+    border-radius: 1px 1px 1px 10px;
+    font-size: 14px;
+    color: $basic-white;
+    font-family: $default-font;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &:disabled {
+        opacity: .3;
+        cursor: default;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 17px;
+        top: 14px;
+        width: 20px;
+        height: 20px;
+        transform: rotate(180deg);
+        background-image: url('../../img/icons/arrow.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+.video-player__project {
+    color: $project-color;
+    margin: 0;
+}
+
+.video-player__scene-title {
+    margin: 0;
+    font-size: 36px;
+    text-align: center;
+    font-weight: 300;
+    color: $basic-white;
+    margin-left: auto;
+    max-width: 45%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.video-player__subtitle-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+}
+
+.video-player__subtitle {
+    width: 100%;
+    background: linear-gradient(180deg, rgba($woodsmoke-special, .95) 0%, rgba($woodsmoke, .95) 9%, rgba($outer-space-extra, .95) 100%);
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid rgba($dove-gray, .3);
+
+    &:last-child {
+        border-radius: 0 5px 5px 0;
+    }
+
+    // &--main {
+    //     background-color: rgba($woodsmoke, .95);
+    // }
+}
+
+.video-player__subtitle-title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+    color: $alto;
+}
+
+.video-player__subtitle-text {
+    margin: 0;
+    color: $alto;
+}
+
+.video-player__log-actions {
+    display: flex;
+}
+
+@keyframes recording {
+    0% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .5;
+    }
+}

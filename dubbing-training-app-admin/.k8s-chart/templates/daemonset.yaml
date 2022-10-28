@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: dta-admin
+spec:  
+  selector:
+    matchLabels:
+      app: dta-admin
+  template:
+    metadata:
+      name: dta-admin
+      labels:
+        app: dta-admin
+    spec:
+      serviceAccountName: build-robot
+      containers:
+        - name : dta-admin
+          image: "{{ .Values.pod.admin.image }}:{{ .Values.pod.admin.tag }}"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

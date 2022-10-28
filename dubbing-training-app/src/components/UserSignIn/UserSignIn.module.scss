@@ -1,0 +1,89 @@
+@import '../../scss/variables.scss';
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(121.69deg, $woodsmoke -13.43%, $outer-space 92.46%);
+    position: relative;
+}
+
+.form {
+    padding: 0 70px;
+    padding-top: 48px;
+    padding-bottom: 100px;
+    background-color: $outer-space-special;
+    box-shadow: 2px 3px 7px -2px rgba($basic-black, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 26px;
+    text-align: center;
+    font-weight: 300;
+    color: $alabaster;
+    margin: 0;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+.inputWrapper {
+    position: relative;
+
+    &:last-of-type .input {
+        margin-bottom: 0;
+    }
+}
+
+.label {
+    position: absolute;
+    right: 20px;
+    top: 19px;
+    font-size: 16px;
+    color: $alto;
+    text-transform: lowercase;
+}
+
+.input {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-family: $default-font;
+    color: $basic-white;
+    padding: 17px 15px;
+    padding-right: 100px;
+    background-color: rgba($basic-black, .1);
+    box-shadow: inset 2px 3px 4px rgba($basic-black, 0.25);
+    margin-bottom: 33px;
+    width: 450px;
+}
+
+.submit {
+    margin-top: 80px;
+    border: 1px solid rgba($woodsmoke, .4);
+    background-color: rgba($outer-space-special, .9);
+    box-shadow: 2px 3px 4px rgba($basic-black, 0.25);
+    font-family: $default-font;
+    font-size: 20px;
+    padding: 18px 123px;
+    color: $basic-white;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .7;
+    }
+
+    &:disabled {
+        opacity: .4;
+    }
+}
+
+.notification {
+    position: absolute;
+    top: 0;
+}
